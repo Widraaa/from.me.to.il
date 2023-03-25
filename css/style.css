@@ -1,0 +1,85 @@
+html{
+    position: relative;
+}
+body{
+    margin-bottom: 120px;
+    margin-top: 30px;
+}
+
+.jumbotron {
+    height: 400px;
+    background-image: url(../img/bg1200x800.jpeg);
+    background-attachment:fixed ;
+    background-size: cover;
+    background-position: 0 -500px;
+    color:#eaeaea;
+    overflow: hidden;
+}
+.jumbotron img{
+    width: 150px;
+    border: 5px solid #eaeaea;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.5) ;
+}
+
+.jumbotron h1, .jumbotron p {
+    text-shadow: 1px 1px 10px rgba(0,0,0,.5);
+}
+hr{
+    width: 250px;
+    border-top: 3px solid #999;
+}
+
+section{
+    min-height: 600px;
+}
+
+.pkiri, .pkanan{
+    opacity: 0;
+    transform: translate(-50px,0) rotate(15deg);
+    transition: 1s;
+}
+
+.pkanan{
+    transform: translate(50px , 0)rotate(-15deg);
+}
+
+.pkiri.pmuncul, .pkanan.pmuncul {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.portfolio{
+    background-color: #eee;
+}
+
+.portfolio .thumbnail {
+    opacity: 0;
+    transform: translate(0, -40px);
+    transition: .5s;
+}
+
+.portfolio .thumbnail.muncul{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+.contact{
+    min-height: 800px;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 120%;
+    height: 100px;
+    background-color: blue;
+    padding-top: 30px;
+}
+
+footer p{
+    color: #999;
+    font-size: 1em;
+}
