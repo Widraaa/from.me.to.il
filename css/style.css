@@ -4,6 +4,7 @@ html {
 body {
   margin-bottom: 120px;
   margin-top: 30px;
+  background-color: #ffffff;
 }
 
 .jumbotron {
@@ -11,7 +12,7 @@ body {
   background-image: url(../img/bg1200x800.jpeg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: 0px 750px;
+  background-position: -50px -150px;
   color: #eaeaea;
   overflow: hidden;
 }
@@ -52,7 +53,7 @@ section {
 }
 
 .portfolio {
-  background-color: #eee;
+  background-color: #809aa4;
 }
 
 .portfolio .thumbnail {
@@ -70,12 +71,130 @@ section {
   min-height: 800px;
 }
 
+.isometric * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.isometric {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+.isometric ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  list-style-type: none;
+}
+
+.isometric ul li {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 200px;
+}
+.isometric li .base {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid var(--color);
+  border-left: 8px solid transparent;
+  filter: drop-shadow(0 0 10px var(--color));
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(60deg) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(60deg) rotateZ(-360deg);
+  }
+}
+
+.isometric li .base::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  top: 9px;
+  left: 9px;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+.isometric li .base,
+li .title,
+li .icon {
+  position: absolute;
+  color: #000000;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.isometric li .title {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: rotateY(30deg) skewY(-24deg) translateY(0px);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.isometric li .icon {
+  display: grid;
+  place-items: center;
+  font-size: 80px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.isometric .base:hover {
+  filter: drop-shadow(0 0 10px var(--color));
+  animation-play-state: pause;
+}
+
+.isometric .base:hover + .title + .icon {
+  transform: rotateY(30deg) skewY(-24deg) translateY(-160px);
+  color: var(--color);
+  filter: drop-shadow(0 0 3px var(--color));
+  animation: wave 1s ease-in-out infinite;
+}
+
+.isometric .base:hover + .title {
+  transform: rotateY(30deg) skewY(-24deg) translateY(-90px);
+  color: var(--color);
+  text-shadow: 0 0 3px var(--color);
+  transition-delay: 0.1s;
+  opacity: 1;
+  animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 15px;
+  }
+}
+
 footer {
   position: absolute;
   bottom: 0;
-  width: 120%;
-  height: 100px;
-  background-color: blue;
+  width: 100%;
+  height: 75px;
+  background-color: #223857;
   padding-top: 30px;
 }
 
